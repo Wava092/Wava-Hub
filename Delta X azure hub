@@ -1,0 +1,532 @@
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+
+WindUI:AddTheme({
+    Name = "Wava",
+    Accent = Color3.fromHex("#18181b"),
+    Dialog = Color3.fromHex("#161616"),
+    Outline = Color3.fromHex("#fc03b1"),
+    Text = Color3.fromHex("#fc03b1"),
+    Placeholder = Color3.fromHex("#7a7a7a"),
+    Background = Color3.fromHex("#101010"),
+    Button = Color3.fromHex("#52525b"),
+    Icon = Color3.fromHex("#fc03b1")
+})
+
+local Window = WindUI:CreateWindow({
+    Title = "DELTA X AZURE HUB",
+    Icon = "zap",
+    Author = "by wava",
+    Folder = "MySuperHub",
+    
+    Size = UDim2.fromOffset(480,360),
+    MinSize = Vector2.new(560, 350),
+    MaxSize = Vector2.new(850, 560),
+    Transparent = true,
+    Theme = "Wava",
+    Resizable = true,
+    SideBarWidth = 200,
+    BackgroundImageTransparency = 0.42,
+    HideSearchBar = true,
+    ScrollBarEnabled = false,
+    
+    User = {
+        Enabled = true,
+        Anonymous = true,
+        Callback = function()
+            print("clicked")
+        end,
+    },
+})
+
+Window:Tag({
+    Title = "T.me/Deltascriptt",
+    Color = Color3.fromHex("#d107fa"),
+    Radius = 10,
+})
+
+local NightForest = Window:Tab({
+    Title = "99 nights in the forest",
+    Icon = "zap",
+    Locked = false,
+})
+
+local Mm2 = Window:Tab({
+    Title = "Mm2",
+    Icon = "zap",
+    Locked = false,
+})
+
+local BF = Window:Tab({
+    Title = "Blox fruits",
+    Icon = "zap",
+    Locked = false,
+})
+
+local SB = Window:Tab({
+    Title = "Slap battles",
+    Icon = "zap",
+    Locked = false,
+})
+
+local Fsch = Window:Tab({
+    Title = "Fisch",
+    Icon = "zap",
+    Locked = false,
+})
+
+local Fors = Window:Tab({
+    Title = "Forsaken",
+    Icon = "zap",
+    Locked = false,
+})
+
+local TSB = Window:Tab({
+    Title = "The Strongest Battlegrounds",
+    Icon = "zap",
+    Locked = false,
+})
+
+local Evade = Window:Tab({
+    Title = "Evade",
+    Icon = "zap",
+    Locked = false,
+})
+
+local Other = Window:Tab({
+    Title = "Other",
+    Icon = "zap",
+    Locked = false,
+})
+
+-- MM2 Buttons
+Mm2:Button({
+    Title = "click to activate",
+    Desc = "auto farm, shoot murder, esp, +40",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Wava092/Wava-Hub/refs/heads/main/Protected_3538827472660746.lua.txt'))()
+    end
+})
+
+Mm2:Button({
+    Title = "click to activate",
+    Desc = "vertex hub",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/vertex-peak/vertex/refs/heads/main/loadstring'))()
+    end
+})
+
+Mm2:Button({
+    Title = "click to activate",
+    Desc = "auto farm candy",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet(('https://pastefy.app/FPGI0uTW/raw'),true))("t.me/deltascriptt")
+    end
+})
+
+-- Blox Fruits Buttons
+BF:Button({
+    Title = "click to activate",
+    Desc = "auto farm exp, auto farm, tp, and more +140",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/TBoyRoblox727/TBoyRobloxYTB/refs/heads/main/AllScriptBF.txt"))()
+    end
+})
+
+BF:Button({
+    Title = "click to activate",
+    Desc = "Fast attack, Bring mob, auto farm, +100",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/xNaos/Sunny-Hub/refs/heads/main/Loader"))()
+    end
+})
+
+BF:Button({
+    Title = "click to activate",
+    Desc = "auto events, auto farm level,+100",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Dex-Bear/Vxezehub/refs/heads/main/VxezeHubMain"))()
+    end
+})
+
+-- 99 Nights Buttons
+NightForest:Button({
+    Title = "click to activate",
+    Desc = "chop trees, kill aura, Bring, +30",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2744e55f3124a8e88bd9d4e75afd92ad.lua"))()
+    end
+})
+
+NightForest:Button({
+    Title = "click to activate",
+    Desc = "chop trees, auto plant+20",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/wrestonbest/Luminary-2025/refs/heads/main/Scripts/Main%20Loader.lua'))()
+    end
+})
+
+NightForest:Button({
+    Title = "click to activate",
+    Desc = "god mod,auto farm with kill +50",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/mynamewendel-ctrl/Blessed-Hub-X-/refs/heads/main/99-Nights-In-Forest.lua"))()
+    end
+})
+
+-- Slap Battles Buttons
+SB:Button({
+    Title = "click to activate",
+    Desc = "auto farm +20",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/101iii101/file/refs/heads/main/slap%20battles%20very%20op%20gui%20skidded%20by%20universe%20king.txt"))()
+    end
+})
+
+SB:Button({
+    Title = "click to activate",
+    Desc = "slap aura, hitbox +10",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/vinqDevelops/erwwefqweqewqwe/refs/heads/main/lol.txt'))()
+    end
+})
+
+SB:Button({
+    Title = "click to activate",
+    Desc = "god mode,slaple farm,slap aura, +30",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/vinqDevelops/erwwefqweqewqwe/refs/heads/main/lol.txt'))()
+    end
+})
+
+-- Fisch Buttons
+Fsch:Button({
+    Title = "click to activate",
+    Desc = "auto farm,auto cast, auto shake,+50",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://api.junkie-development.de/api/v1/luascripts/public/35eabcb2c03e2c3e0767386f9518fb187022b321e69988192299145ea725c819/download"))()
+    end
+})
+
+-- Forsaken Buttons
+Fors:Button({
+    Title = "click to activate",
+    Desc = "auto block, no fog, auto fix, aimbot+30",
+    Locked = false,
+    Callback = function()
+        getfenv().ADittoKey="NOL_FRERKEY_THISISFOR"
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Syndromehsh/NOL/refs/heads/main/Nolsaken"))() 
+    end
+})
+
+Fors:Button({
+    Title = "click to activate",
+    Desc = "auto block, no fog, auto fix, tp pizza+35",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VW-Add/main/forsaken.lua", true))()
+    end
+})
+
+Fors:Button({
+    Title = "click to activate",
+    Desc = "auto block, auto punch, auto fix, tp pizza+25",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/LolnotaKid/project/refs/heads/main/AutoBLOCKKKWAHV1"))()
+    end
+})
+
+-- The Strongest Battlegrounds Buttons
+TSB:Button({
+    Title = "click to activate",
+    Desc = "no stun, Invisible block, +20",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/weatherwess-lgtm/Gui-Lite/refs/heads/main/Tsb"))()
+    end
+})
+
+TSB:Button({
+    Title = "click to activate",
+    Desc = "no stun, auto block +15",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/hellattexyss/cpsautoblockbeta/refs/heads/main/cpscombatbeta.lua"))()
+    end
+})
+
+TSB:Button({
+    Title = "click to activate",
+    Desc = "no stun, auto block, Fake dash+25",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/mynamewendel-ctrl/Blessed-Hub-X-/refs/heads/main/The-Strongest-Battlegrounds.lua"))()
+    end
+})
+
+-- Evade Button
+Evade:Button({
+    Title = "click to activate",
+    Desc = "auto farm",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/main/EvadeEvent"))("@XScepTskX")
+    end
+})
+
+-- Other Games Buttons
+Other:Button({
+    Title = "Death ball",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/4a78b6be964a42fd8c1332bec9894432.lua"))()
+    end
+})
+
+Other:Button({
+    Title = "Meme sea",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://pastebin.com/raw/X7iQpTVF"))()
+    end
+})
+
+Other:Button({
+    Title = "Bee swarm",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/VerbalHubz/Verbal-Hub/refs/heads/main/Bee%20Swarm%20Sim.Lua",true))() 
+    end
+})
+
+Other:Button({
+    Title = "war tycoon",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://pastebin.com/raw/gf22x6st"))()
+    end
+})
+
+Other:Button({
+    Title = "KAT X",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://pastefy.app/yQTChpK4/raw"))("t.me/deltascriptt")
+    end
+})
+
+Other:Button({
+    Title = "NFT battle",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/volmaksDev/My-Scripts/refs/heads/main/nftbattle.lua"))()
+    end
+})
+
+Other:Button({
+    Title = "Snipe or die",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://rawscripts.net/raw/SNIPE-OR-DIE-FPS-Syrex-hub-Snipe-Or-Die-50257"))()
+    end
+})
+
+Other:Button({
+    Title = "Build ur base",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/SCPShadow/novushub/refs/heads/main/loader.lua"))()
+    end
+})
+
+Other:Button({
+    Title = "SCP Roleplay",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/axleoislost/Accent/main/Scp-Roleplay"))()
+    end
+})
+
+Other:Button({
+    Title = "Arsenal",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Orangecatgamer696969/Arsenal/refs/heads/main/Protected_8195528649941335.lua.txt"))()     
+    end
+})
+
+Other:Button({
+    Title = "Murders vs sherif",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubMurdervssheriff"))()
+    end
+})
+
+Other:Button({
+    Title = "Violence destrict",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/volmaksDev/My-Scripts/refs/heads/main/ViolenceDistrict.lua"))()
+    end
+})
+
+Other:Button({
+    Title = "Da Hills",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/zenss555a/script/refs/heads/main/Da-Hill.lua"))()
+    end
+})
+
+Other:Button({
+    Title = "Legends of speed",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Api00000/Name/refs/heads/main/Protected_4009976267485007.lua.txt"))()
+    end
+})
+
+Other:Button({
+    Title = "Muscle legends",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Lemonchity/LemonNewEra-Beta-/refs/heads/main/Muscle%20legendsRussian"))()
+    end
+})
+
+Other:Button({
+    Title = "Taxi Boss",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Wic1k/Scripts/refs/heads/main/taxiboss.txt"))()
+    end
+})
+
+Other:Button({
+    Title = "Gun grounds FFA",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/VGXMODPLAYER68/VGXMOD-REBORN/refs/heads/main/Gun%20Ground%20FFA.lua", true))()
+    end
+})
+
+Other:Button({
+    Title = "Blade Ball",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Fsploit/SG-Fluxus/refs/heads/main/SG_FLUXUSZ-obfuscated.lua.txt"))() 
+    end
+})
+
+Other:Button({
+    Title = "Survive on the raft",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/main/SurviveonaRaft"))()
+    end
+})
+
+Other:Button({
+    Title = "Da strike",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/public-account-7/skidware/refs/heads/main/loader.lua"))()
+    end
+})
+
+Other:Button({
+    Title = "Rivals",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/b581d07bfd134ff4ea612d671361be77.lua"))()
+    end
+})
+
+Other:Button({
+    Title = "Fish it",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/vinxonez/ViKai-HUB/refs/heads/main/loader"))() 
+    end
+})
+
+Other:Button({
+    Title = "Plants Vs Brainrots",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/H4xScripts/Loader/refs/heads/main/loader2.lua", true))()
+    end
+})
+
+Other:Button({
+    Title = "Steal a fish",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/main/StealAFish"))()
+    end
+})
+
+Other:Button({
+    Title = "Niinja legends",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://pastebin.com/raw/7gwcPvra"))()
+    end
+})
+
+Other:Button({
+    Title = "Garden tower defense",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/couldntBeT/Main/refs/heads/main/Main.lua"))()
+    end
+})
+
+Other:Button({
+    Title = "YBA",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/volmaksDev/My-Scripts/refs/heads/main/YBA.lua"))()
+    end
+})
