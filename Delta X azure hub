@@ -284,7 +284,7 @@ local Other = Window:Tab({
     Locked = false,
 })
 
-local Button = Tab:Button({
+local Button = Main:Button({
     Title = "Купить премиум версию +100 скриптов",
     Color = Color3.fromHex("#d107fa"), -- paint the button
     Justify = "Center", -- align items in the center (Center or Between or Left or Right)
