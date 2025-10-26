@@ -1,5 +1,6 @@
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
+-- Добавляем несколько тем
 WindUI:AddTheme({
     Name = "Wava",
     Accent = Color3.fromHex("#18181b"),
@@ -10,6 +11,54 @@ WindUI:AddTheme({
     Background = Color3.fromHex("#101010"),
     Button = Color3.fromHex("#52525b"),
     Icon = Color3.fromHex("#fc03b1")
+})
+
+WindUI:AddTheme({
+    Name = "Dark",
+    Accent = Color3.fromHex("#3a3a3a"),
+    Dialog = Color3.fromHex("#1e1e1e"),
+    Outline = Color3.fromHex("#ffffff"),
+    Text = Color3.fromHex("#ffffff"),
+    Placeholder = Color3.fromHex("#7a7a7a"),
+    Background = Color3.fromHex("#121212"),
+    Button = Color3.fromHex("#2a2a2a"),
+    Icon = Color3.fromHex("#ffffff")
+})
+
+WindUI:AddTheme({
+    Name = "Blue",
+    Accent = Color3.fromHex("#1e3a8a"),
+    Dialog = Color3.fromHex("#1e1e2e"),
+    Outline = Color3.fromHex("#3b82f6"),
+    Text = Color3.fromHex("#ffffff"),
+    Placeholder = Color3.fromHex("#94a3b8"),
+    Background = Color3.fromHex("#0f172a"),
+    Button = Color3.fromHex("#1e3a8a"),
+    Icon = Color3.fromHex("#3b82f6")
+})
+
+WindUI:AddTheme({
+    Name = "Green",
+    Accent = Color3.fromHex("#065f46"),
+    Dialog = Color3.fromHex("#1e1e2e"),
+    Outline = Color3.fromHex("#10b981"),
+    Text = Color3.fromHex("#ffffff"),
+    Placeholder = Color3.fromHex("#94a3b8"),
+    Background = Color3.fromHex("#0f172a"),
+    Button = Color3.fromHex("#065f46"),
+    Icon = Color3.fromHex("#10b981")
+})
+
+WindUI:AddTheme({
+    Name = "Purple",
+    Accent = Color3.fromHex("#581c87"),
+    Dialog = Color3.fromHex("#1e1e2e"),
+    Outline = Color3.fromHex("#a855f7"),
+    Text = Color3.fromHex("#ffffff"),
+    Placeholder = Color3.fromHex("#94a3b8"),
+    Background = Color3.fromHex("#0f172a"),
+    Button = Color3.fromHex("#581c87"),
+    Icon = Color3.fromHex("#a855f7")
 })
 
 local Window = WindUI:CreateWindow({
@@ -43,6 +92,133 @@ Window:Tag({
     Color = Color3.fromHex("#d107fa"),
     Radius = 10,
 })
+
+Window:Tag({
+    Title = "Free",
+    Color = Color3.fromHex("#00ff44"),
+    Radius = 10,
+})
+
+-- Создаем вкладку для настроек темы
+local SettingsTab = Window:Tab({
+    Title = "Theme Settings",
+    Icon = "palette",
+    Locked = false,
+})
+
+-- Выпадающий список для выбора темы
+local themeDropdown = SettingsTab:Dropdown({
+    Title = "Select Theme",
+    Desc = "Change the UI theme",
+    Values = {"Wava", "Dark", "Blue", "Green", "Purple"},
+    Value = "Wava",
+    Callback = function(selectedTheme)
+        WindUI:SetTheme(selectedTheme)
+        WindUI:Notify({
+            Title = "Theme Changed",
+            Content = "Theme has been changed to " .. selectedTheme,
+            Duration = 3,
+            Icon = "palette",
+        })
+    end
+})
+
+-- Цветовые пикеры для кастомной темы
+local customAccent = SettingsTab:Colorpicker({
+    Title = "Accent Color",
+    Desc = "Main accent color",
+    Default = Color3.fromHex("#18181b"),
+    Transparency = 0,
+    Callback = function(color)
+        _G.CustomThemeColors = _G.CustomThemeColors or {}
+        _G.CustomThemeColors.Accent = color
+    end
+})
+
+local customText = SettingsTab:Colorpicker({
+    Title = "Text Color",
+    Desc = "Text color",
+    Default = Color3.fromHex("#fc03b1"),
+    Transparency = 0,
+    Callback = function(color)
+        _G.CustomThemeColors = _G.CustomThemeColors or {}
+        _G.CustomThemeColors.Text = color
+    end
+})
+
+local customBackground = SettingsTab:Colorpicker({
+    Title = "Background Color",
+    Desc = "Background color",
+    Default = Color3.fromHex("#101010"),
+    Transparency = 0,
+    Callback = function(color)
+        _G.CustomThemeColors = _G.CustomThemeColors or {}
+        _G.CustomThemeColors.Background = color
+    end
+})
+
+-- Кнопка для применения кастомной темы
+SettingsTab:Button({
+    Title = "Apply Custom Theme",
+    Desc = "Apply your custom color scheme",
+    Callback = function()
+        if _G.CustomThemeColors then
+            WindUI:AddTheme({
+                Name = "Custom",
+                Accent = _G.CustomThemeColors.Accent or Color3.fromHex("#18181b"),
+                Dialog = _G.CustomThemeColors.Background or Color3.fromHex("#161616"),
+                Outline = _G.CustomThemeColors.Accent or Color3.fromHex("#fc03b1"),
+                Text = _G.CustomThemeColors.Text or Color3.fromHex("#fc03b1"),
+                Placeholder = Color3.fromHex("#7a7a7a"),
+                Background = _G.CustomThemeColors.Background or Color3.fromHex("#101010"),
+                Button = _G.CustomThemeColors.Accent or Color3.fromHex("#52525b"),
+                Icon = _G.CustomThemeColors.Text or Color3.fromHex("#fc03b1")
+            })
+            
+            WindUI:SetTheme("Custom")
+            themeDropdown:SetValues({"Wava", "Dark", "Blue", "Green", "Purple", "Custom"})
+            themeDropdown:Set("Custom")
+            
+            WindUI:Notify({
+                Title = "Custom Theme Applied",
+                Content = "Your custom theme has been applied successfully",
+                Duration = 3,
+                Icon = "palette",
+            })
+        else
+            WindUI:Notify({
+                Title = "Error",
+                Content = "Please select colors first",
+                Duration = 3,
+                Icon = "alert-circle",
+            })
+        end
+    end
+})
+
+-- Кнопка для сброса к стандартной теме
+SettingsTab:Button({
+    Title = "Reset to Default",
+    Desc = "Reset to Wava theme",
+    Callback = function()
+        WindUI:SetTheme("Wava")
+        themeDropdown:Set("Wava")
+        WindUI:Notify({
+            Title = "Theme Reset",
+            Content = "Theme has been reset to Wava",
+            Duration = 3,
+            Icon = "refresh-cw",
+        })
+    end
+})
+
+-- Остальные вкладки
+local Main = Window:Tab({
+    Title = "Main",
+    Icon = "zap",
+    Locked = false,
+})
+
 
 local NightForest = Window:Tab({
     Title = "99 nights in the forest",
@@ -91,12 +267,34 @@ local Evade = Window:Tab({
     Icon = "zap",
     Locked = false,
 })
+local Pvb = Window:Tab({
+    Title = "Plants VS Brainrots",
+    Icon = "zap",
+    Locked = false,
+})
+local Brook = Window:Tab({
+    Title = "Brookhaven",
+    Icon = "zap",
+    Locked = false,
+})
 
 local Other = Window:Tab({
     Title = "Other",
     Icon = "zap",
     Locked = false,
 })
+
+local Button = Tab:Button({
+    Title = "Купить премиум версию +100 скриптов",
+    Color = Color3.fromHex("#d107fa"), -- paint the button
+    Justify = "Center", -- align items in the center (Center or Between or Left or Right)
+    IconAlign = "Left", -- Left or Right of the text
+    Icon = "zap", -- removing icon
+    Callback = function()
+        setclipboard("https://t.me/Delta_WavaClient/14")
+    end
+})
+
 
 -- MM2 Buttons
 Mm2:Button({
@@ -287,6 +485,52 @@ Evade:Button({
     end
 })
 
+--pvsb
+
+Pvb:Button({
+    Title = "click to activate",
+    Desc = "auto farm, Fast Attack, esp",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Kernelecho1/prostone-Hub-script/refs/heads/main/plantsVSbrainrots.lua"))()
+    end
+})
+
+Pvb:Button({
+    Title = "click to activate",
+    Desc = "auto buy seeds, auto buy gears",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/H4xScripts/Loader/refs/heads/main/loader2.lua", true))()
+    end
+})
+
+Brook:Button({
+    Title = "click to activate",
+    Desc = "Halloween event auto farm",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet(('https://raw.githubusercontent.com/kigredns/NTEVENT/refs/heads/main/script.lua')))()
+    end
+})
+Brook:Button({
+    Title = "click to activate",
+    Desc = "troll, tp all, free gamepass",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Daivd977/Deivd999/refs/heads/main/pessal"))()
+    end
+})
+
+Brook:Button({
+    Title = "click to activate",
+    Desc = "kill buss, fling crouch",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Cat558-uz/Script-Op/refs/heads/main/Protected_2705659116955221.lua.txt"))()
+    end
+})
+
 -- Other Games Buttons
 Other:Button({
     Title = "Death ball",
@@ -296,6 +540,8 @@ Other:Button({
        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/4a78b6be964a42fd8c1332bec9894432.lua"))()
     end
 })
+
+
 
 Other:Button({
     Title = "Meme sea",
@@ -529,4 +775,87 @@ Other:Button({
     Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/volmaksDev/My-Scripts/refs/heads/main/YBA.lua"))()
     end
+})
+
+Other:Button({
+    Title = "Bulked up",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/terminatedfear/Bulked-Up-By-Terminated/3fdc92073d076d199157e9fbc44f8ece685712a0/Bulked%20Up%20Op%20No%20key.txt"))()
+    end
+})
+Other:Button({
+    Title = "ink game",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet('https://pastefy.app/jSG8rqox/raw'))()
+    end
+})
+
+Other:Button({
+    Title = "Slasher blade loot",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://pastebin.com/raw/PWHXtrWu"))()
+    end
+})
+Other:Button({
+    Title = "Steal a brainrot",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet('https://pastefy.app/6pnmQtdp/raw'))()
+    end
+})
+
+
+
+
+
+
+-- Функция для быстрой смены темы
+function ChangeTheme(themeName)
+    WindUI:SetTheme(themeName)
+    if themeDropdown then
+        themeDropdown:Set(themeName)
+    end
+end
+
+-- Уведомление о загрузке
+WindUI:Notify({
+    Title = "DELTA X AZURE HUB",
+    Content = "Successfully loaded!",
+    Duration = 5,
+    Icon = "check-circle",
+})
+
+-- Popup при запуске
+WindUI:Popup({
+    Title = "Welcome to DELTA X AZURE HUB",
+    Icon = "zap",
+    Content = "Thank you for using our hub! Select your game and enjoy the scripts.",
+    Buttons = {
+        {
+            Title = "Close",
+            Callback = function() end,
+            Variant = "Tertiary",
+        },
+        {
+            Title = "Get More",
+            Icon = "external-link",
+            Callback = function()
+                setclipboard("https://t.me/Deltascriptt")
+                WindUI:Notify({
+                    Title = "Link Copied",
+                    Content = "Telegram link copied to clipboard!",
+                    Duration = 3,
+                    Icon = "copy",
+                })
+            end,
+            Variant = "Primary",
+        }
+    }
 })
