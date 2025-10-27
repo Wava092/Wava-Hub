@@ -811,6 +811,42 @@ Other:Button({
     end
 })
 
+Other:Button({
+    Title = "Prison life",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://pastebin.com/raw/CwncTqSG"))()
+    end
+})
+
+Other:Button({
+    Title = "Restaraunt tycoon 3",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/yolobradda/RT3/refs/heads/main/loader.lua"))()
+    end
+})
+
+Other:Button({
+    Title = "Azure lath",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Joshingtonn123/JoshScript/refs/heads/main/SyrexGenesisAzurelatch"))()("t.me/deltascriptt")
+    end
+})
+
+Other:Button({
+    Title = "Tower defense",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/minh597/farm/refs/heads/main/gems.lua", true))()
+    end
+})
+
 
 
 
