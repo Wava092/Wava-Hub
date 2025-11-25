@@ -1,0 +1,59 @@
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+local Window = WindUI:CreateWindow({
+    Title = "Key System",
+    Icon = "zap", -- lucide icon
+    Author = "",
+    Folder = "MySuperHub",
+    
+    -- ↓ This all is Optional. You can remove it.
+    Size = UDim2.fromOffset(480,360),
+    MinSize = Vector2.new(560, 350),
+    MaxSize = Vector2.new(850, 560),
+    Transparent = true,
+    Theme = "Red",
+    Resizable = true,
+    SideBarWidth = 200,
+    BackgroundImageTransparency = 0.42,
+    HideSearchBar = true,
+    ScrollBarEnabled = false,
+    
+    
+    
+    --       remove this all, 
+    -- !  ↓  if you DON'T need the key system
+    KeySystem = { 
+        -- ↓ Optional. You can remove it.
+        Key = {"85FJI6RYO07RFDU8", "5678"},
+        
+        Note = "Example Key System.",
+        
+        -- ↓ Optional. You can remove it.
+        
+        
+        -- ↓ Optional. You can remove it.
+        URL = "https://go.linkify.ru/2E5p",
+        
+        -- ↓ Optional. You can remove it.
+        SaveKey = false, --save and load the key.
+        
+        
+    },
+})
+local Tab = Window:Tab({
+    Title = "Activate script",
+    Icon = "bird", -- optional
+    Locked = false,
+})
+
+
+
+local Button = Tab:Button({
+    Title = "Activate script",
+    Color = Color3.fromHex("#d107fa"), -- paint the button
+    Justify = "Center", -- align items in the center (Center or Between or Left or Right)
+    IconAlign = "Left", -- Left or Right of the text
+    Icon = "zap", -- removing icon
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/caomod2077/Script/refs/heads/main/FoxnameHub.lua"))()
+    end
+}) 
